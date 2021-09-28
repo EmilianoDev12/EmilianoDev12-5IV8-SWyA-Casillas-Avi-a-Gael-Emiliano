@@ -48,3 +48,8 @@ ul.tabs li a{
 .secciones article{
     padding: 30px;
 }
+
+.data{
+    display: flex;
+    justify-content: space-around;
+}

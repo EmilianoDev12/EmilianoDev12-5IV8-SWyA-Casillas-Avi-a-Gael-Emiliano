@@ -11,6 +11,7 @@
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="./js/main.js"></script>
         <script src="./js/cesar.js"></script>
+        <script src="./js/vigenere.js"></script>
     </head>
     <body>
         <div class="wrap shadow-lg">
@@ -67,6 +68,11 @@
                             <input type="text" id="resultado" name="resultado" class="form-control" readonly>
                         </div>
                     </form>
+                    <br>
+                    <div class="data">
+                        <h5>Alumno: Casillas Aviña Gael Emiliano</h5>
+                        <h5>Grupo: 5IV8</h5>
+                    </div>
                 </article>
                 <article id="tab2">
                     <h1>Cifrado de Vigenè</h1>
@@ -75,7 +81,7 @@
                         <div>
                             <div class="col">
                                 <label for="mensaje" class="form-label">Mensaje a cifrar</label>
-                                <input type="text" id="mess" name="nombre" class="form-control">
+                                <input type="text" id="mess" name="nombre" class="form-control" onkeypress="return validarm(event)">
                             </div>
                             <div class="col">
                                 <label for="clave" class="form-label">Clave</label>
@@ -89,6 +95,11 @@
                             <input type="text" id="rs" name="resultado" class="form-control" readonly>
                         </div>
                     </form>
+                    <br>
+                    <div class="data">
+                        <h5>Alumno: Casillas Aviña Gael Emiliano</h5>
+                        <h5>Grupo: 5IV8</h5>
+                    </div>
                 </article>
             </div>
         </div>
