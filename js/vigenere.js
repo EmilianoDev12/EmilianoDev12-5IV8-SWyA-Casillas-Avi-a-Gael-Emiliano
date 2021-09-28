@@ -26,7 +26,11 @@ function procesarV(operacion){
                 if(operacion == "c"){
                     cifer += dic[(dic.indexOf(mensaje[i]) + dic.indexOf(key[j])) % 26];
                 }else if(operacion == "d"){
-                    cifer += dic[(dic.indexOf(mensaje[i]) - dic.indexOf(key[j])) % 26];
+                    if((dic.indexOf(mensaje[i]) - (dic.indexOf(key[j])) % 26) < 0){
+                        cifer += dic[26 + (dic.indexOf(mensaje[i]) - (dic.indexOf(key[j])) % 26)];
+                    }else{
+                        cifer += dic[(dic.indexOf(mensaje[i]) - (dic.indexOf(key[j])) % 26)];
+                    }
                 }
                 j++;
                 if(j == key.length) j = 0;
