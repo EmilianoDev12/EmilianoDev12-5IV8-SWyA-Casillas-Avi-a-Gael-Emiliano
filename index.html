@@ -61,8 +61,8 @@
                                 <input type="text" id="clave" name="clave" class="form-control" onkeypress="return validarn(event)" maxlength="3">
                             </div>
                         </div>
-                        <button onclick="return cifrarCesar()" class="btn btn-primary">Cifrar</button>
-                        <button onclick="return desCesar()" class="btn btn-secondary">Decifrar</button>
+                        <button onclick="return cifrarCesar('c')" class="btn btn-primary">Cifrar</button>
+                        <button onclick="return cifrarCesar('d')" class="btn btn-secondary">Decifrar</button>
                         <div class="col">
                             <label for="resultado" class="form-label">Mensaje cifrado</label>
                             <input type="text" id="resultado" name="resultado" class="form-control" readonly>
@@ -77,22 +77,22 @@
                 <article id="tab2">
                     <h1>Cifrado de Vigenè</h1>
                     <br>
-                    <form class="row g-3 needs-validation" novalidate>
+                    <form class="row g-3 needs-validation" name="vigenere" novalidate>
                         <div>
                             <div class="col">
                                 <label for="mensaje" class="form-label">Mensaje a cifrar</label>
-                                <input type="text" id="mess" name="nombre" class="form-control" onkeypress="return validarm(event)">
+                                <input type="text" id="mess" name="mess" class="form-control" onkeypress="return validarm(event)">
                             </div>
                             <div class="col">
                                 <label for="clave" class="form-label">Clave</label>
-                                <input type="text" id="llave" name="clave" class="form-control">
+                                <input type="text" id="llave" name="llave" class="form-control">
                             </div>
                         </div>
-                        <button onclick="return cifrarV()" class="btn btn-primary">Cifrar</button>
-                        <button onclick="return desV()" class="btn btn-secondary">Decifrar</button>
+                        <button onclick="return procesarV('c')" class="btn btn-primary">Cifrar</button>
+                        <button onclick="return procesarV('d')" class="btn btn-secondary">Decifrar</button>
                         <div class="col">
                             <label for="resultado" class="form-label">Mensaje cifrado</label>
-                            <input type="text" id="rs" name="resultado" class="form-control" readonly>
+                            <input type="text" id="rs" name="rs" class="form-control" readonly>
                         </div>
                     </form>
                     <br>

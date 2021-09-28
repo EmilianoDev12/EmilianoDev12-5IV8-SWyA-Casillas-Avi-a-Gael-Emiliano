@@ -1,8 +1,8 @@
-function cifrarCesar(){
+function cifrarCesar(operacion){
     let mensaje = document.cesar.mensaje.value;
     let clave = document.cesar.clave.value;
     let res = "";
-    let dic = ['','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+    let dic = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     if(mensaje == ""){
         Swal.fire({
@@ -24,13 +24,20 @@ function cifrarCesar(){
             if(mensaje[i] == " "){
                 res += " ";
             }else{
-                pos = dic.indexOf(mensaje[i]);
-                pos += clave;
-                pos %= 26;
-                if(pos == 0){
-                    res += "z";
-                }else{
+                if(operacion == "c"){
+                    pos = dic.indexOf(mensaje[i]);
+                    pos += clave;
+                    pos %= 26;
                     res += dic[pos];
+                }else if(operacion == "d"){
+                    pos = dic.indexOf(mensaje[i]);
+                    pos -= clave;
+                    pos %= 26;
+                    if(pos >= 0){
+                        res += dic[pos];
+                    }else{
+                        res += dic[26 + pos];
+                    }
                 }
             }
         }
@@ -44,7 +51,7 @@ function desCesar(){
     let mensaje = document.cesar.mensaje.value;
     let clave = document.cesar.clave.value;
     let res = "";
-    let dic = ['','a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+    let dic = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     if(mensaje == ""){
         Swal.fire({
@@ -69,9 +76,7 @@ function desCesar(){
                 pos = dic.indexOf(mensaje[i]);
                 pos -= clave;
                 pos %= 26;
-                if(pos == 0){
-                    res += "z";
-                }else if(pos > 0){
+                if(pos >= 0){
                     res += dic[pos];
                 }else{
                     res += dic[26 + pos];
