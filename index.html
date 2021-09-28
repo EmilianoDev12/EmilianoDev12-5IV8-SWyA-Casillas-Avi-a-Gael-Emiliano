@@ -75,7 +75,7 @@
                     </div>
                 </article>
                 <article id="tab2">
-                    <h1>Cifrado de Vigenè</h1>
+                    <h1>Cifrado de Vigenère</h1>
                     <br>
                     <form class="row g-3 needs-validation" name="vigenere" novalidate>
                         <div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="col">
                                 <label for="clave" class="form-label">Clave</label>
-                                <input type="text" id="llave" name="llave" class="form-control">
+                                <input type="text" id="llave" name="llave" class="form-control" onkeypress="return validarc(event)">
                             </div>
                         </div>
                         <button onclick="return procesarV('c')" class="btn btn-primary">Cifrar</button>
